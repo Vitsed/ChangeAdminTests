@@ -1,92 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2e3348;"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.vitsed.myWork.workflow.AdminChangeController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2e3348;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vitsed.myWork.workflow.AdminChangeController">
     <children>
-        <MenuBar id="menuBar" prefHeight="39.0" prefWidth="800.0" style="-fx-background-color: skyBlue;"
-                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
+        <MenuBar id="menuBar" prefHeight="39.0" prefWidth="800.0" style="-fx-background-color: skyBlue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Close"/>
+                        <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About"/>
+                        <MenuItem mnemonicParsing="false" text="About" />
                     </items>
                 </Menu>
             </menus>
             <opaqueInsets>
-                <Insets right="10.0"/>
+                <Insets right="10.0" />
             </opaqueInsets>
         </MenuBar>
-        <HBox layoutX="36.0" layoutY="103.0" style="-fx-background-color: skyBlue;" AnchorPane.leftAnchor="35.0"
-              AnchorPane.rightAnchor="35.0">
+        <HBox layoutX="36.0" layoutY="103.0" style="-fx-background-color: skyBlue;" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
             <children>
-                <VBox alignment="TOP_CENTER" layoutX="36.0" layoutY="103.0">
-                    <children>
-                        <Label fx:id="fieldsLabel" text="Данные">
-                            <opaqueInsets>
-                                <Insets/>
-                            </opaqueInsets>
-                        </Label>
-                        <TextField fx:id="docNumberField" layoutX="124.0" layoutY="98.0" promptText="#Входящий"/>
-                        <TextField fx:id="domainsField" promptText="Домены"/>
-                        <TextField fx:id="oldAdminField" layoutX="124.0" layoutY="154.0" promptText="От "/>
-                        <TextField fx:id="oldAdminEmailField" layoutX="124.0" layoutY="213.0" promptText="Почта"/>
-                        <TextField fx:id="newAdminField" layoutX="124.0" layoutY="269.0" promptText="Кому"/>
-                        <TextField fx:id="newAdminEmailField" layoutX="124.0" layoutY="329.0" promptText="Почта"/>
-                        <TextField fx:id="loginField" layoutX="124.0" layoutY="451.0" promptText="Логин"/>
-                    </children>
-                </VBox>
-                <VBox prefHeight="300.0" prefWidth="507.0">
-                    <children>
-                        <Label fx:id="emailTextExample" text="Пример письма:"/>
-                        <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="300.0">
-                            <opaqueInsets>
-                                <Insets/>
-                            </opaqueInsets>
-                        </TextArea>
-                        <Label fx:id="currentData" text="Дата:"/>
-                    </children>
-                </VBox>
+            <GridPane hgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                      <VBox alignment="TOP_CENTER">
+                          <children>
+                              <Label fx:id="fieldsLabel" text="Данные">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </Label>
+                              <TextField fx:id="docNumberField" layoutX="124.0" layoutY="98.0" promptText="#Входящий" />
+                              <TextField fx:id="domainsField" promptText="Домены" />
+                              <TextField fx:id="oldAdminField" layoutX="124.0" layoutY="154.0" promptText="От " />
+                              <TextField fx:id="oldAdminEmailField" layoutX="124.0" layoutY="213.0" promptText="Почта" />
+                              <CheckBox mnemonicParsing="false" text="Подтвержден" />
+                              <TextField fx:id="newAdminField" layoutX="124.0" layoutY="269.0" promptText="Кому" />
+                              <TextField fx:id="loginField" layoutX="124.0" layoutY="451.0" promptText="Логин" />
+                              <TextField fx:id="newAdminEmailField" layoutX="124.0" layoutY="329.0" promptText="Почта" />
+                        <CheckBox mnemonicParsing="false" text="Подтвержден" />
+                          </children>
+                      </VBox>
+                      <VBox prefHeight="300.0" prefWidth="507.0" GridPane.columnIndex="1">
+                          <children>
+                              <Label fx:id="emailTextExample" text="Пример письма:" />
+                              <TextArea fx:id="textArea" prefHeight="312.0" prefWidth="502.0">
+                                  <opaqueInsets>
+                                      <Insets />
+                                  </opaqueInsets>
+                              </TextArea>
+                              <Label fx:id="currentData" text="Дата:" />
+                          </children>
+                      </VBox>
+               </children>
+            </GridPane>
             </children>
         </HBox>
-        <GridPane hgap="15.0" layoutX="307.0" layoutY="449.0">
+        <GridPane hgap="15.0" layoutX="39.0" layoutY="479.0" prefHeight="39.0" prefWidth="724.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="showExampleBtn" onAction="#showExampleLetter" layoutX="307.0" layoutY="449.0"
-                        mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" text="Просмотр"/>
-                <Button fx:id="clearBtn" onAction="#clearExampleText" layoutX="434.0" layoutY="449.0" prefHeight="39.0" prefWidth="154.0"
-                        text="Очистить" GridPane.columnIndex="1"/>
-                <Button fx:id="sentMailBtn" layoutX="588.0" layoutY="449.0"  prefHeight="39.0"
-                        prefWidth="127.0" text="Отправить" GridPane.columnIndex="2"/>
+                <Button fx:id="addCommentBtn" text="Добавить комментарий" GridPane.columnIndex="0" />
+                <Button fx:id="showExampleBtn" layoutX="307.0" layoutY="449.0" mnemonicParsing="false" onAction="#showExampleLetter" prefHeight="39.0" prefWidth="127.0" text="Просмотр" GridPane.columnIndex="1" />
+                <Button fx:id="clearBtn" layoutX="434.0" layoutY="449.0" onAction="#clearExampleText" prefHeight="39.0" prefWidth="154.0" text="Очистить" GridPane.columnIndex="2" />
+                <Button fx:id="sentMailBtn" layoutX="588.0" layoutY="449.0" prefHeight="39.0" prefWidth="140.0" text="Отправить" GridPane.columnIndex="3" />
+
             </children>
         </GridPane>
-        <Button fx:id="addCommentBtn" layoutX="36.0" layoutY="410.0"
-                text="Добавить комментарий"/>
-        <Label layoutX="36.0" layoutY="62.0" prefHeight="27.0" prefWidth="214.0" text="Сменить Администратора"
-               textFill="WHITE"/>
+        <Label layoutX="36.0" layoutY="62.0" prefHeight="27.0" prefWidth="214.0" text="Сменить Администратора" textFill="WHITE" />
     </children>
     <opaqueInsets>
-        <Insets/>
+        <Insets />
     </opaqueInsets>
 
 </AnchorPane>
