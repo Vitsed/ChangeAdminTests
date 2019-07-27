@@ -63,11 +63,11 @@
                               <TextField fx:id="domainsField" promptText="Домены" />
                               <TextField fx:id="oldAdminField" layoutX="124.0" layoutY="154.0" promptText="От " />
                               <TextField fx:id="oldAdminEmailField" layoutX="124.0" layoutY="213.0" promptText="Почта" />
-                              <CheckBox mnemonicParsing="false" text="Подтвержден" />
+                              <CheckBox fx:id="isVerifiedOld" mnemonicParsing="false" text="Подтвержден" />
                               <TextField fx:id="newAdminField" layoutX="124.0" layoutY="269.0" promptText="Кому" />
                               <TextField fx:id="loginField" layoutX="124.0" layoutY="451.0" promptText="Логин" />
                               <TextField fx:id="newAdminEmailField" layoutX="124.0" layoutY="329.0" promptText="Почта" />
-                        <CheckBox mnemonicParsing="false" text="Подтвержден" />
+                        <CheckBox fx:id="isVerifiedNew" mnemonicParsing="false" text="Подтвержден" />
                           </children>
                       </VBox>
                       <VBox prefHeight="300.0" prefWidth="507.0" GridPane.columnIndex="1">
